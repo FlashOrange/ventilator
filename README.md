@@ -40,97 +40,96 @@ NOTE: 本项目克隆自独立开源项目，特别需要注意的是，按本�
 
 还有一些其他的工作.  [一个简要的列表](https://github.com/jcl5m1/ventilator/blob/master/resources.md) Thanks! [discussion](https://github.com/jcl5m1/ventilator/pull/20) 
 
-# （未完待续）
-
-# To Do's (aka. things I could use help with):
- * I had a long conversation with a pulmonologist to discuss the critical features of a proper ventilator and trade offs. [Here are my notes](https://github.com/jcl5m1/ventilator/wiki/Notes-from-chatting-with-a-pulmonologist).  If you know someone with domain expertise, I would like confirmation that my take away notes are reasonable since this will drive priorities on engineering effort/conversations.
- * Develop a simple low-cost sensor configuration that can [provide a similar approximation of lung compliance provided by a ventilator loop display](https://github.com/jcl5m1/ventilator/wiki/Notes-from-chatting-with-a-pulmonologist#at-a-high-level-the-goal-is-to-get-enough-air-into-the-lungs-to-keep-the-patient-alive-without-causing-unnecessary-stress-on-infected-lung-tissue)
- * A 3D model for an [inline air filter](https://www.directhomemedical.com/cart/merchant.mvc?Screen=PROD&Product_Code=1-H1605-inline-bacterial-viral-cpap-filters&Store_Code=DHM&gclid=EAIaIQobChMIo-G35omi6AIVSrzACh29hwv3EAQYASABEgK9FPD_BwE) with link to common filter supply [such as this](https://www.amazon.com/3M-Particulate-Filter-Organic-Filters/dp/B079X5C3QP/ref=sr_1_2?keywords=p100+air+filter&qid=1584469511&sr=8-2).
- * Test lung sourcing/research.  Example high end one from [Michigan Instruments](https://www.michiganinstruments.com/lung-simulators/adult-test-lung-simulators/).
- * Alarms for out of target (too low, too high) or out of target range flow/volume.
-* A supply chain person that can help us find good suppliers of parts, if there is desire to make these. I don't have a supply chain setup. The few parts I have on hand may not be easily sourcable in any volume quickly.
- * Figure out how to reprogram an existing BiPAP. If this operating mode is helpful, there's a large number of these devices already in the field which could be enabled.  I don't have good stats on the popularity of different makes/models.  There could be on the order of a [1M devices](https://www.cheapcpapsupplies.com/blog/sleep-apnea-statistics/) worldwide?
- * Design modifications to recapture exhaust to minimze addition viral spread. This only works in already "dirty" environments, where there is likely already airborne droplets containing virus - such as quarnateened spaces or other negative air pressure environments.
- * Develop Arduino compatible algorithms to align blower cycle to the breathing cycle by [looking at backpressure load on the blower](https://github.com/jcl5m1/ventilator/wiki/Breathing-Back-Pressure-Data-Analysis), or very simple air pressure sensor that can be inserted into the output of the pump.  For ease of developing algorithms see [Colab notebook with data visualization.](https://colab.research.google.com/drive/1iFMmMMrg_3OeifzJikT75fy4ev84W235)
- * Solutions to prevent the system from becoming unsafe if power is lost.  It's not obvious to me on how to do this.  Ideas are welcome.
- * Test with a [simple inflator pump](https://www.amazon.com/gp/product/B013UQ0T2Y/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) and achieve the same pressure control.
- * Develop a low-cost simple minute volume sensor/approximator.  Here is some information about the [downsides of being over/under on target volume](https://www.acepnow.com/article/avoid-airway-catastrophes-extremes-minute-ventilation/).  Critical care seems to want up to 10-12L/Min.
-
-To provide comments/feedback/offer help, [create a new issue](https://github.com/jcl5m1/ventilator/issues) on the project.  Thanks!
 
 
-# Useful References/Docs about the supply shortages, and guidance around unapproved devices:
+# To Do列表(一些事情我需要亲们的帮助):
+ * 我和一位呼吸科科医生进行了长时间的交谈，讨论了合适的呼吸机的关键特征和权衡。 [这里是过程记录](https://github.com/jcl5m1/ventilator/wiki/Notes-from-chatting-with-a-pulmonologist).  如果你认识相关的专家，请帮助确认这部分讨论的合理性，这对今后的工作至关重要。
+ * 开发一个简单的传感器 [通过呼吸机循环显示提供一个类似的肺顺应性近似值](https://github.com/jcl5m1/ventilator/wiki/Notes-from-chatting-with-a-pulmonologist#at-a-high-level-the-goal-is-to-get-enough-air-into-the-lungs-to-keep-the-patient-alive-without-causing-unnecessary-stress-on-infected-lung-tissue)
+ * 一个 [内联空气过滤器的3D模型](https://www.directhomemedical.com/cart/merchant.mvc?Screen=PROD&Product_Code=1-H1605-inline-bacterial-viral-cpap-filters&Store_Code=DHM&gclid=EAIaIQobChMIo-G35omi6AIVSrzACh29hwv3EAQYASABEgK9FPD_BwE) 用来放置通用过滤片 [例如这样的](https://www.amazon.com/3M-Particulate-Filter-Organic-Filters/dp/B079X5C3QP/ref=sr_1_2?keywords=p100+air+filter&qid=1584469511&sr=8-2).
+ * 肺模拟器的采购与支持. 这有一个高端的（太贵了） [Michigan Instruments](https://www.michiganinstruments.com/lung-simulators/adult-test-lung-simulators/).
+ * 流量阈值告警.
+* 一个能帮助我们找到好的零部件供应商的供应链人员，如果有意愿的话。我没有建立供应链。我手头上的少数几个零件可能没有持续性。
+ * 弄清楚如何重新编写现有的BiPAP。如果这种操作模式有帮助，那么在这个领域中已经有大量这样的设备可以启用。我没有关于不同品牌/型号受欢迎程度的统计数据。 在没有疫情的情况下，全球也有[100万的此类设备需求](https://www.cheapcpapsupplies.com/blog/sleep-apnea-statistics/) ?
+ * 修改设计，使其能够收集废气，以减少添加病毒传播。这只适用于已经“肮脏”的环境，那里很可能已经有含有病毒的飞沫在空气中传播——比如被隔离的空间或其他负压环境。
+ * 开发Arduino兼容算法，通过[查看风机的背压负载](https://github.com/jcl5m1/ventilator/wiki/Breathing-Back-Pressure-Data-Analysis)将风机周期与呼吸周期对齐, 或非常简单的空气压力传感器，可以插入到泵的输出中.  为了便于开发算法，请参阅[带有数据可视化的 Colab notebook.](https://colab.research.google.com/drive/1iFMmMMrg_3OeifzJikT75fy4ev84W235)
+ * 断电时的解决方案，我不知道怎么做，欢迎提供方案。
+ * 测试一个[简易的充气泵](https://www.amazon.com/gp/product/B013UQ0T2Y/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) 并实现压力控制.
+ * 开发一个低成本的流量传感器/逼近器 [用于控制流量](https://www.acepnow.com/article/avoid-airway-catastrophes-extremes-minute-ventilation/). 重症监护的流量达到 10-12L/Min.
 
-There is a growing list of useful documents around guidance for use of unapproved equipment, and information around estimated shortages of both ventilators and personal protective equipment.  We have moved them to [References Wiki to enable better updates](https://github.com/jcl5m1/ventilator/wiki/Useful-References) to make it easier to maintain.
+可以通过[开一个新的 issue](https://github.com/jcl5m1/ventilator/issues) 来提供帮助，谢谢!
+
+
+# 关于供应短缺的有用的参考资料/文档，以及关于未经批准的设备的指导:
+
+关于未经批准的设备使用指南的有用文件越来越多，有关通风设备和个人防护设备估计短缺的信息也越来越多.  我们将这些信息转移到了这里 [Wiki可以更好的跟踪更新](https://github.com/jcl5m1/ventilator/wiki/Useful-References) 使其易于维护.
 
 # Materials
-1. [Continuous Positive Airway Pressure (CPAP)](https://en.wikipedia.org/wiki/Continuous_positive_airway_pressure) devices are commonly used by individuals to treat [sleep apnea](https://en.wikipedia.org/wiki/Sleep_apnea). As a result, CPAP blower components are fairly abundant. Used ones are available on eBay and new ones on Alibaba. In many of these devices, the blower is a simple BLDC motor that can be driven with an Electronics Speed Controller (ESC) used by quadrotors and RC cars.  The one I used is pulled from a [Respironics REMStar](https://www.google.com/search?q=respironics+remstar&safe=off&rlz=1C1CHBF_enUS809US809&sxsrf=ALeKk00Uw98vXCAyCiiSglgt-2Ucnz5RCg:1584357572342&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj2mq_y757oAhXOvJ4KHV22D1EQ_AUoAnoECAwQBA).  In volume, these blower components can be under $20.  
-  * Alternative: test a [12v inflator pump](https://www.amazon.com/gp/product/B013UQ0T2Y/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) which is even more abundant.  
-  * Alternative: [print a blower](https://drmrehorst.blogspot.com/2018/04/the-mother-of-all-print-cooling-fans.html) [[discussion]](https://github.com/jcl5m1/ventilator/issues/8)
+1. [持续正压 (CPAP)](https://en.wikipedia.org/wiki/Continuous_positive_airway_pressure) 设备通常用于个人应对 [睡眠障碍](https://en.wikipedia.org/wiki/Sleep_apnea). 因此，CPAP鼓风机部件相当丰富. 可以在ebay上获得二手的，在阿里巴巴上可以找到新的（译者注：阿里国内1688网站上有，淘宝上没找到）. 在这些设备中，鼓风机是一个简单的无刷直流电动机，它可以由一个电子速度控制器(ESC)驱动，该控制器可以用于无人机和遥控车.  The 我从这里拆了一个 [Respironics REMStar](https://www.google.com/search?q=respironics+remstar&safe=off&rlz=1C1CHBF_enUS809US809&sxsrf=ALeKk00Uw98vXCAyCiiSglgt-2Ucnz5RCg:1584357572342&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj2mq_y757oAhXOvJ4KHV22D1EQ_AUoAnoECAwQBA).  批量采购，价格会低于20美元（译者注：1688上的零售价格为148元）.  
+  * 替换设备: 测试一个[12v充气泵](https://www.amazon.com/gp/product/B013UQ0T2Y/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) 这个更容易找到（译者注：这个噪音会比较大，但是价格便宜很多，淘宝上20元就能买到，可靠性估计会比较差，用来做测试或许是可以的）.  
+  * 替代选择: 3D打印一个鼓风机（译者注：这并不是一个明智的选择，3D打印部件精度很差，价格也很高，不适用此场景） [[讨论]](https://github.com/jcl5m1/ventilator/issues/8)
 
-2.  [Arduino Compatible Nano/Clone](https://www.amazon.com/s?k=Arduino+nano) to control the motor speed, breathing cycles, and handle user input.   Download the [Arduino IDE](https://www.arduino.cc/en/main/software) to program the [microcontroller software](https://github.com/jcl5m1/ventilator/tree/master/ventilator_control).
+2.  [Arduino兼容开发板](https://www.amazon.com/s?k=Arduino+nano) 用来控制电机转速, 呼吸循环, 并且处理输入.   Download the [Arduino IDE](https://www.arduino.cc/en/main/software) to program the [microcontroller software](https://github.com/jcl5m1/ventilator/tree/master/ventilator_control).
 
-3. Brushless DC Motor [Electronic Speed Controller](https://www.amazon.com/Hobbypower-Brushless-Controller-Multicopter-Helicopter/dp/B00XKX5TBE/ref=sr_1_17?keywords=12v+ESC&qid=1584357758&sr=8-17) capable of at least 10A. 
+3. 无刷电机 [电子调速器](https://www.amazon.com/Hobbypower-Brushless-Controller-Multicopter-Helicopter/dp/B00XKX5TBE/ref=sr_1_17?keywords=12v+ESC&qid=1584357758&sr=8-17) 至少要能够承载10A电流. 
 
-4. Button or switch for input control.  The code cycles through 5 levels of pressure. Double click to switch between CPAP and BiPAP/Fixed PEEP mode.
+4. 用于输入控制的按钮或开关。代码循环通过5级压力。双击可在CPAP和BiPAP/Fixed PEEP模式之间切换.
 
-5. 12v DC power supply that can handle at least 5A.  The blower works pretty hard, and the breathing cycles can create voltage drops which will reset the Arduino if the supply is not strong enough.
+5. 12v直流电源，至少可以提供5A电流。鼓风机负载很高，呼吸循环可能会导致电压下降，如果电源功率不够，Arduino就会复位。
 
-6. Tubing and face mask.  If you search for [CPAP face mask](https://www.google.com/search?q=cpap+mask), you'll find many options/suppliers.  A full face mask that covers both the mouth and nose will enable pressure buildup in the lungs.  As an alternative, see below for draft 3D printable parts.
+6. 管道及面罩.  如果你搜索 [CPAP face mask](https://www.google.com/search?q=cpap+mask), 你能发现很多供应商和相关设备.  一个覆盖嘴和鼻子的完整的面罩会使肺部的压力积聚。另一种选择，见下面的草案3D打印部分。
 
-7. Optional [inline 12v battery backup](https://www.amazon.com/gp/product/B07H8F5HYJ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1).
+7. 可选的 [24V在线后备电源](https://www.amazon.com/gp/product/B07H8F5HYJ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1).
 
-# Building
-This is the full system with mask, tubing, pump, 12v battery, and switch for input.  However, I would strongly recommend running this with a DC power supply since the battery will only last about 3-4 hours.  <strong>Wearing the mask with a dead battery could cause dangerous CO2 build up.</strong>  This [particular battery](https://www.amazon.com/gp/product/B07H8F5HYJ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) can charge and supply power at the same time, acting as an inline battery backup to wall power.
+# 建造过程
+这是一个包括面罩、管道、气泵、12V电池、开关和输入的完整系统。 但我强烈建议你使用直流电源而不是电池，因为电池最多能维持3-4个小时。 <strong>电池缺电时使用面罩会导致二氧化碳聚集，这会产生危险.</strong>  这种 [专用电池](https://www.amazon.com/gp/product/B07H8F5HYJ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) 可以边充电边使用, 可以作为墙面电源的后备电源（译者注：万能的淘宝应当有更多可选方案）.
 
-![Full System](https://github.com/jcl5m1/ventilator/blob/master/images/full%20system.jpg?raw=true)
+![完整系统图片](https://github.com/jcl5m1/ventilator/blob/master/images/full%20system.jpg?raw=true)
 
-Below is a close up of the extracted blower.  It is simply a BLDC motor driving a blower fan.  A small ESC and Arduino are attached (technically a Teensy2.0++, but the code has now been changed to an Arduino Nano).  It has a 3d printed tapered hose adpater on it to fit in the hose.  The [microcontroller software](https://github.com/jcl5m1/ventilator/tree/master/ventilator_control) can be programmed with the [Arduino IDE](https://www.arduino.cc/en/main/software). The software goes through a short initialization sequence to configure the ESC; it then starts at the lowest CPAP setting.  You can use the switch to cycle through pressure levels, and double click to cycle through operating modes.
+下面是一个鼓风机的特写.  它只是一个直流无刷电机驱动的鼓风机风扇。  上面连接了一个电子调速器和一个Arduino开发板（Teensy2.0++版本，但是目前代码迁移到了Arduino Nano上面）。它有一个3d打印锥形软管适配器，可以配合软管使用。  [微控制器软件](https://github.com/jcl5m1/ventilator/tree/master/ventilator_control) 可以使用 [Arduino IDE](https://www.arduino.cc/en/main/software)进行编程. 软件通过一个简短的初始化序列来配置ESC; 然后从最低的CPAP设置开始工作.  您可以使用开关循环选择通气压力水平，并双击循环选择通气工作模式。
 
-![Extracted CPAP Blower](https://github.com/jcl5m1/ventilator/blob/master/images/IMG_20200315_230153.jpg?raw=true)
+![CPAP 鼓风机](https://github.com/jcl5m1/ventilator/blob/master/images/IMG_20200315_230153.jpg?raw=true)
 
-Here is the schematic for the electronics. As you can see, it is very simple with only a few parts.  A slightly modifed version that is able to [sense the blower current is here](https://github.com/jcl5m1/ventilator/wiki/Breathing-Back-Pressure-Data-Analysis).
+这是是电子原理图。正如您所看到的，它非常简单，只有很少的几个部件。这是一个轻度修改版本，可以 [感知呼吸循环](https://github.com/jcl5m1/ventilator/wiki/Breathing-Back-Pressure-Data-Analysis).
 ![schematic](https://github.com/jcl5m1/ventilator/blob/master/images/schematic_20200317.1.jpg?raw=true)
 
 
-## Face mask / Tube Adapter
-Since I have a CPAP, I happen to have a [Resmed AitFit F20](https://www.amazon.com/Resmed-AirFit-Frame-System-Cushion/dp/B07C9MR5RS) mask that I can use.  This is quite comfortable and covers both the nose and mouth to make a good seal.  However, if you can't get a mask,  below is a prototype mouthguard that fits in the category of not-so-great-but-usable-if-you-have-a-lot-of-tape.  I am using some [elastic straps](https://www.amazon.com/gp/product/B07WZRZDPF/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) as head gear.  However, in order to get a good air seal to get enough positive pressure, this would require some tape.  A little bit of leakage is actually desirable to allow CO2 to escape near the mouth and nose to flush out the air over time; this prevents CO2 from being stuck in the tube.  <strong>WARNING: wearing this sealed to the mouth with tape without power may cause dangerous CO2 build up.</strong>
+## 面罩 / 管道适配器
+因为我有一个CPAP, 这样我就正好可以获得一个[Resmed AitFit F20](https://www.amazon.com/Resmed-AirFit-Frame-System-Cushion/dp/B07C9MR5RS)可以使用的面罩.  它很舒适，并且可以在覆盖口鼻的情况下密封得很好。如果你手头没有,  下面是一个可以使用的方案。我用了一些 [松紧带](https://www.amazon.com/gp/product/B07WZRZDPF/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) 来固定面罩。如果要获得足够的气密性，你需要一些弹力更强的东西。一点点的泄漏实际上是可以接受的，可以让二氧化碳从嘴和鼻子附近逸出，随着时间的推移把空气冲出去; 这样也可以阻止二氧化碳滞留在管道中。  <strong>警告：在断电的情况下使用密封的面罩可导致二氧化碳聚集而产生危险！</strong>
 
-Download the [[3D model]](https://github.com/jcl5m1/ventilator/blob/master/3dmodels/mouthgaurd_v20200316.2.stl) [[Fusion 360 link]](https://a360.co/33rwb1R).
+下载3D模型 [[3D model]](https://github.com/jcl5m1/ventilator/blob/master/3dmodels/mouthgaurd_v20200316.2.stl) [[Fusion 360 link]](https://a360.co/33rwb1R).
 
-![Mouth Guard](https://github.com/jcl5m1/ventilator/blob/master/images/mouthguard.jpg?raw=true)
+![护口器](https://github.com/jcl5m1/ventilator/blob/master/images/mouthguard.jpg?raw=true)
 ![Mouth Guard model](https://raw.githubusercontent.com/jcl5m1/ventilator/67c2725fc48a3bc147430cb8c9974f961ff96b7c/images/mouth_guard_model.JPG)
 
 
-# Pressure Testing
+# 压力测试
+这是我用来测量输出压力的试验台的图片。它是一个u形管，带有测量带，用来测量水的排水量。 实际的液体位移是测量线的2倍，因为液体在U的另一边被向下推了相同的量，使位移增加了一倍。(I think this is the correct way to measure).  在12v时开足马力, 通气量是 45cmh2o. <strong>[WARNING: 高于 20cmh2o 会有危险](https://github.com/jcl5m1/ventilator/wiki/Notes-from-chatting-with-a-pulmonologist)</strong>.  所以这个鼓风机的动力是非常足够的。
 
-This is a picture of my test rig to measure the output pressure.  It is a U-shaped tube with an attached measuring tape to check displacement of water.  The actual liquid displacement is 2x the measured line since liquid is being pushed downwards an equal amount on the other side of the U, doubling the displacement. (I think this is the correct way to measure).  At full blast at 12v, it is achieving 45cmh2o. <strong>[WARNING: Going above 20cmh2o can be DANGEROUS](https://github.com/jcl5m1/ventilator/wiki/Notes-from-chatting-with-a-pulmonologist)</strong>.  So, these blowers are plently powerful.
+![压力测量装置](https://github.com/jcl5m1/ventilator/blob/master/images/test_fixture.jpg?raw=true)
 
-![Pressure measurement fixture](https://github.com/jcl5m1/ventilator/blob/master/images/test_fixture.jpg?raw=true)
-
-Here are some images showing the dislacement of the liquid at different speeds.  I happen to have Diet Dr. Pepper on hand which makes it easier to see the liquid level rather than just plain water.
+这里有一些图片显示了液体在不同速度下的表现。我手头正好有瓶饮料，相对于白水，这让我更容易看清液位。
 
 ![3cm](https://github.com/jcl5m1/ventilator/blob/master/images/3cm.jpg?raw=true) ![6cm](https://github.com/jcl5m1/ventilator/blob/master/images/6cm.jpg?raw=true) ![11cm](https://github.com/jcl5m1/ventilator/blob/master/images/11cm.jpg?raw=true) ![22.5cm](https://github.com/jcl5m1/ventilator/blob/master/images/22.5.jpg?raw=true)
 
-Here's a [video of the blower pushing a breathing cycle of 16 cycles/min oscilating between 12 and 22cmh2o](https://photos.app.goo.gl/b3yMPE5QpdeduxKS6).
+[这是一段鼓风机推动呼吸循环的视频，呼吸循环为16周期/分钟，在12到22cmh2o之间波动](https://photos.app.goo.gl/b3yMPE5QpdeduxKS6).
 
-# Air Filtration - PAPR Option
+# 空气过滤 - PAPR 选项
 
-An open air blower into someone's airway isn't great.  If possible, some filtration is preferred.  These parts were originally used for a DIY [Powered Air Purifying Respriator (PAPR)](https://en.wikipedia.org/wiki/Powered_air-purifying_respirator). However, adding a filter will definitely affect the output pressure.  It will depend on the blower you have if the motor can handle the additional load.  Given the headroom of the blower I tested, these CPAP blowers can probably handle the filter and still hit the target pressure.  However, I haven't done long term thermal testing at high pressure and with a strong filter. These adapter plates can be attached with liberal amounts of hot glue and wrapping the unit in vinyl tape to get a reasonably airtight seal.  My blower's enclosure was not air-tight, so it is difficult to guarantee that 100% of the air is coming only through the filter.  Setting the blower to a low CPAP pressure, and leaving the face mask vent holes open will allow it to function reasonably as a PAPR.
+将空气直接灌到某人的气道并不是好主意。如有可能，预先将空气过滤。  这些部件原本是用来DIY PAPR的[Powered Air Purifying Respriator (PAPR)](https://en.wikipedia.org/wiki/Powered_air-purifying_respirator)。不过，加上一个过滤器会显著影响输出气压。这取决于你的马达在额外压力如何工作。  考虑到我测试的鼓风机的净空高度，这些CPAP鼓风机可以在通过过滤器的情况侠仍然达到目标压力。然而，我还没有在高压和更强的过滤器环境下做长时间测试。特别是适配器用了一些胶带和胶水来做密封。 我的鼓风机外壳不是气密的，所以很难保证100%的空气是通过过滤器的。 将鼓风机设置为低CPAP压力，并将面罩通气孔打开，将使其作为PAPR正常工作。
 
-* This is an adapter plate for a [3M P100 or N95 face mask filter cartridge](https://www.amazon.com/3M-50051138464658-Cartridge-Filter-Organic/dp/B07571LR2K/ref=sr_1_2?crid=36AKE548EW15U&keywords=3m+p100+cartridge&qid=1584418326&sprefix=3m+p100+cartrige%2Caps%2C202&sr=8-2). Download [[3D model]](https://github.com/jcl5m1/ventilator/blob/master/3dmodels/3M_filter_adapter.stl) [[Fusion 360 link]](https://a360.co/2QnQQOU)
+* 这是 [3M P100 or N95 面罩滤芯](https://www.amazon.com/3M-50051138464658-Cartridge-Filter-Organic/dp/B07571LR2K/ref=sr_1_2?crid=36AKE548EW15U&keywords=3m+p100+cartridge&qid=1584418326&sprefix=3m+p100+cartrige%2Caps%2C202&sr=8-2)的转接器。 下载 [[3D 模型]](https://github.com/jcl5m1/ventilator/blob/master/3dmodels/3M_filter_adapter.stl) [[Fusion 360 link]](https://a360.co/2QnQQOU)
 
 
 ![3M Apart](https://github.com/jcl5m1/ventilator/blob/master/images/3m_apart.jpg?raw=true) ![3M attached](https://github.com/jcl5m1/ventilator/blob/master/images/3m_attached.jpg?raw=true)
 
-* This is an adapter plate for a [NATO 40mm gas mask filter cartridge](https://www.amazon.com/MIRA-Cartridge-Respiratory-Protection-Filter/dp/B07L38TYSF/ref=sr_1_2?keywords=40mm+gas+mask+filters&qid=1584418565&sr=8-2).  These fitlers are available with [CBRN](https://en.wikipedia.org/wiki/CBRN_defense) ratings which are needed for viral and bacterial defense similar to those [approved by the CDC/NIOSH](https://www.cdc.gov/niosh/npptl/standardsdev/cbrn/papr/default.html). Download [[3D model]](https://github.com/jcl5m1/ventilator/blob/master/3dmodels/NATO_40mm_adapter.stl) [[Fusion 360 link]](https://a360.co/3914gXs)
+* 这是一个[NATO 40mm gas mask filter cartridge](https://www.amazon.com/MIRA-Cartridge-Respiratory-Protection-Filter/dp/B07L38TYSF/ref=sr_1_2?keywords=40mm+gas+mask+filters&qid=1584418565&sr=8-2)的转接器。  这些过滤器具有These fitlers are available with [CBRN](https://en.wikipedia.org/wiki/CBRN_defense)评级，可作为生化防护使用，类似 [CDC/NIOSH 认可的产品](https://www.cdc.gov/niosh/npptl/standardsdev/cbrn/papr/default.html). 下载 [[3D 模型]](https://github.com/jcl5m1/ventilator/blob/master/3dmodels/NATO_40mm_adapter.stl) [[Fusion 360 link]](https://a360.co/3914gXs)
 
 
 
-![NATO Apart](https://github.com/jcl5m1/ventilator/blob/master/images/NATO_apart.jpg?raw=true) ![NATO attached](https://github.com/jcl5m1/ventilator/blob/master/images/NATO_attached.jpg?raw=true)
+![NATO 部件](https://github.com/jcl5m1/ventilator/blob/master/images/NATO_apart.jpg?raw=true) ![NATO 附件](https://github.com/jcl5m1/ventilator/blob/master/images/NATO_attached.jpg?raw=true)
 
-* This is an option for an [inline filter](https://www.directhomemedical.com/cart/merchant.mvc?Screen=PROD&Product_Code=1-H1605-inline-bacterial-viral-cpap-filters&Store_Code=DHM&gclid=EAIaIQobChMIo-G35omi6AIVSrzACh29hwv3EAQYASABEgK9FPD_BwE) [[discussion]](https://github.com/jcl5m1/ventilator/issues/4) that looks easy to install, and would be helpful for non-CPAP blowers. 
+* 这是一个可选的[内联过滤器](https://www.directhomemedical.com/cart/merchant.mvc?Screen=PROD&Product_Code=1-H1605-inline-bacterial-viral-cpap-filters&Store_Code=DHM&gclid=EAIaIQobChMIo-G35omi6AIVSrzACh29hwv3EAQYASABEgK9FPD_BwE) [[相关讨论]](https://github.com/jcl5m1/ventilator/issues/4)看起来易于安装并且可以在非CPAP鼓风机中使用。 
 
-# Update Log
+# 更新日志
 
-Click [here](https://github.com/jcl5m1/ventilator/wiki) to see updates.
+点击[这里](https://github.com/jcl5m1/ventilator/wiki) 查看日志。
