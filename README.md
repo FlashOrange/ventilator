@@ -2,41 +2,45 @@ Last updated 2020/03/20
 
 ![Full System](https://github.com/jcl5m1/ventilator/blob/master/images/full%20system.jpg?raw=true)
 
-# Low-Cost Open-Source Ventilator-ish Device or PAPR
+# 低成本开源呼吸机
 
-NOTE: This is currently an independent project not affiliated with any commercial institution.
+NOTE: 本项目克隆自独立开源项目，特别需要注意的是，按本项目制造的器械，并不符合中国或其他国家对于医疗器械的要求，仅可以在非常规限定条件下使用，使用时需要在有执业资格的专业医师指导下进行。本项目仅为记录文献，并不为此项目所涉及的硬件中的部分或整体导致的任何事故负责。在没有正确指导的情况下使用未经过认证的医疗器械，可能会导致死亡！
 
-* In the event that COVID-19 hospitalizations exhaust the availability of FDA approved ventilators.  This project documents the process of converting a low-cost CPAP (Continuous Positive Airway Pressure) blower into a rudimentary non-invasive pressure support ventilator that could help with breathing during respiratory distress.  It's an evolving project, but in it's current form, it most aligned with the definition of a non-invasive pressure support BiPAP ventilator.
- * This same project can also be used to create a reasonable [low-cost Powered Air Purifying Respirator (PAPR)](https://github.com/jcl5m1/ventilator/wiki/Build-a-Low-Cost-PAPR) with filter adapter and mask.  PAPRs are effective pieces of Personal Protective Equipment (PPE) that could be helpful to caregivers. PAPRs will also be in extremely short supply and are much less risky and controversial than a DIY ventilator.  You may be able to save many more lives by building a PAPR that protects a caregiver than a mediocre ventilator for one patient.  Unless you are able to participate in the detailed engineering and medical discussions regarding mitigating the risks of high pressure ventilation, I would highly recommend focusing on the PAPR version of this build.
+* 2020年，COVID-19 病毒席卷全球，并且耗尽了多个国家的医疗资源.  本项目记录了将一种CPAP(持续气道正压) 充气机改造成一个压力支持无创通气机的过程，希望能够帮助在呼吸窘迫发生时得不到医疗支持的人们. 这是一个目前持续更新的项目，到目前为止，本项目涉及的设备，比较符合对于无创压力支持BiPAP呼吸机的定义。
+ * 本项目同时也可以用于制造动力呼吸面罩 [低成本动力空气净化呼吸器 (PAPR)](https://github.com/jcl5m1/ventilator/wiki/Build-a-Low-Cost-PAPR) .  PAPRs 是个人防护装备的有效组成部分 (PPE)，用以帮助护理人员. PAPR在目前的情况下也非常紧缺，DIY此设备所带来的风险要远远低于DIY前面所述的呼吸机. DIY个人防护装备，给予陪护人员帮助，相对DIY呼吸机更加能够挽救人们的生命.  除非你有足够的专业能力参与到本项目相关的呼吸专科的专业讨论中，而又想提供帮助，建议从这里开始，而不要去DIY呼吸机.
 
-### WARNING/DISCLAIMER: Whenever possible, please seek professional medical care with proper equipment setup by trained individuals. Do not use random information you found on the internet. I am not a medical professional, just a random person putting information on the internet. There are significant risks associated with using a high pressure BiPAP as a DIY ventilator without medical supervision.  
 
-### What are the primary risks of a DIY ventilator?
- * Being viewed as a viable alternative to available professional care or delaying seeking professional care.  This should be viewed as an educational resource or a last resort option only.  Community driven engineering efforts like this run the risk of making it "too easy to be harmful" which would be a bad outcome.
- * Using non-invasive interfaces (such as masks and mouth pieces) can create aerosolized virus infecting many others in clean environments.  Infecing yourself or other healthy individuals multiplies the problem.  Usage should be restricted to places where aerosolized viruses are already abundant (lots of unmasked symptomatic individuals), COVID wards, or in isolation. <strong>NOTE: Self-quarantine in an apartment or multi-unit residence is NOT proper isolation due to potential shared ventilation and sewage.</strong>
-* Giving too high a pressure (such as 20cmh2o and up) without observing lung compliance can cause rupture of infected lung tissue.  This design currently lacks several features that provide enough feedback to a caregiver to monitor that risk.
-* See [more detailed discussion of these risks and potential engineering/administrative controls to address them](https://github.com/jcl5m1/ventilator/wiki/Notes-from-chatting-with-a-pulmonologist).
+### 警告与声明: 如有可能，请寻求专业的医疗护理，并由受过培训的个人设置适当的设备。不要随意使用你在互联网上找到的信息。我不是医学专业人士，只是一个把信息放到网上的人。在没有医疗监督的情况下，使用高压BiPAP来DIY呼吸机存在非常非常大的风险。  
 
-### Too risky? Build a low-cost PAPR!
-One more time, a [low-cost Powered Air Purifying Respirator (PAPR)](https://github.com/jcl5m1/ventilator/wiki/Build-a-Low-Cost-PAPR) is highly vaulable for caregivers, and may have much more positive impact than bulding a mediocre ventilator.
+### DIY呼吸机的主要风险
+ * 只有在没有其他任何办法的时候，在一切资源都无法得到支持的时候，才可以去尝试用这里的方法DIY呼吸机，并且务必要在专业人员在场的情况下使用。这里为绝望的人们提供最后的希望（并且希望人们永远不要用到它）。
+ * 无创呼吸机的使用可能会导致大量气溶胶的产生，这对周围的人们是非常危险的.  使用的环境应当在已经不能再糟糕的环境（气溶胶已经充满空间）. <strong>NOTE: 在共享通风管道和下水道的公寓中自我隔离，并不是一种合理的方案（这也是建立方舱医院的原因）.</strong>
+* 在缺乏肺顺应性的条件下过高的压力(例如20cmh2o 或更高) 会损伤发炎的肺组织.  而目前的设计中并不包含相应的功能.
+* 查看这里 [关于风险和工程控制的讨论](https://github.com/jcl5m1/ventilator/wiki/Notes-from-chatting-with-a-pulmonologist).
 
-### Hardware Requirements and Medical/Government Request for proposals:
- * Requirements doc from [Code Life Ventilator Challenge - Montreal General Hospital Foundation](https://www.agorize.com/en/challenges/code-life-challenge/pages/guidelines?lang=en) (Canada)
+### 风险太高了? 做一个低成本PAPR吧!
+再说一遍, 一个 [低成本主动空气净化呼吸器(PAPR)](https://github.com/jcl5m1/ventilator/wiki/Build-a-Low-Cost-PAPR) 能够给陪护人员提供很大的帮助，比被动式呼吸器要有效得多。
+
+### 硬件要求和关于医疗器械的政府相关法规:
+ * [中国关于医疗器械的相关法规](http://www.nmpa.gov.cn/WS04/CL2178/)
+ * Requirements doc from [Code Life Ventilator Challenge - Montreal General Hospital Foundation](https://www.agorize.com/en/challenges/code-life-challenge/pages/guidelines?lang=en) (加拿大)
 
  * Requirements from [Gov.UK  - Rapidly Manufactured Ventilator System](https://www.gov.uk/government/publications/coronavirus-covid-19-ventilator-supply-specification/rapidly-manufactured-ventilator-system-specification?fbclid=IwAR2IgOyENgHJTsLouIiikpuiwgwupdB8d8Aun2he8nzMPWGfhBVhaG_sMqo) (UK)
 
-### Current Hardware Capabilities
-  * This rudimentary design can have a programmable breathing rate (ex: 10-16/min)
-  * It can have a programmed Positive End-Expiratory Pressure (PEEP)
-  * The blower is physicially able to hit a peak airway pressure of up to 45cmh2o. However, <strong>[going above 20cmh2o can be DANGEROUS](https://github.com/jcl5m1/ventilator/wiki/Notes-from-chatting-with-a-pulmonologist)</strong>.  
-  * It cannot yet hit a target tidal volume.  What level of accuracy in volume would be sufficient?  100mL? 10mL?  
-  * It does not regulate fractional oxygen (FiO2).  But, a down stream connection to an O2 tank is possible to boost O2 concentration with manual flow adjustment.  I could use a pointer to a low cost O2 sensor.
-  * It is lacking in many other ways, but it is possible that this limited functionality could be helpful when better care is not available.  It is also a starting point for making progress.  Critical features can be added over time.
+### 当前的硬件功能
+  * 这种初步设计可以有一个可编程的呼吸频率 (ex: 10-16/min)
+  * 它可以设定呼气末正压(PEEP)
+  * 呼吸机的气道压力可以高达 45cmh2o. 但是, <strong>[高于 20cmh2o 就会有危险](https://github.com/jcl5m1/ventilator/wiki/Notes-from-chatting-with-a-pulmonologist)</strong>.  
+  * 它还无法设定适当的潮汐量，100毫升还是10毫升，多少是正确的？并不清楚。  
+  * 它并不能调节氧摄取分数(FiO2).  但是，连接到氧气罐的下游可以通过手动调节流量来提高氧气罐的浓度。我可以用一个指针指向一个低成本的O2传感器。
+  * 这个项目的功能还很不完善，但当不能得到更好的治疗时，这种有限的功能可能会有所帮助。这也是取得进展的起点。关键功能可以随着时间的推移而增加。
 
-Here's a youtube video walking through the components as of 2020/03/17:
+这个发布于2020年3月17日的油管视频，演示的相关的部件:
 [![Youtube video](https://img.youtube.com/vi/n57u1NvXBgw/0.jpg)](https://www.youtube.com/watch?v=n57u1NvXBgw)
 
-There are also many other efforts in this direction.  [Here's a short list of them](https://github.com/jcl5m1/ventilator/blob/master/resources.md) Thanks! [discussion](https://github.com/jcl5m1/ventilator/pull/20) 
+还有一些其他的工作.  [一个简要的列表](https://github.com/jcl5m1/ventilator/blob/master/resources.md) Thanks! [discussion](https://github.com/jcl5m1/ventilator/pull/20) 
+
+# （未完待续）
 
 # To Do's (aka. things I could use help with):
  * I had a long conversation with a pulmonologist to discuss the critical features of a proper ventilator and trade offs. [Here are my notes](https://github.com/jcl5m1/ventilator/wiki/Notes-from-chatting-with-a-pulmonologist).  If you know someone with domain expertise, I would like confirmation that my take away notes are reasonable since this will drive priorities on engineering effort/conversations.
